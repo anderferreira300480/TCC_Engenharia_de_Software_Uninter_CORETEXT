@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.3">  
+    <title>CORETEXT - Auditoria Universal</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="/static/images/logo.png" alt="Logo CORETEXT">
+            <span class="tagline">Análise de Integridade e Autoria em Textos</span>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="central-controls">
+            <div class="button-group">
+                <button id="btn-start" class="btn-run">Iniciar Análise</button>
+                <button id="btn-reset" class="btn-reset" onclick="resetarSistema()">Nova Análise</button>
+            </div>
+            
+            <div class="progress-container">
+                <svg width="120" height="120">
+                    <circle cx="60" cy="60" r="52" stroke="#e6e6e6" stroke-width="8" fill="transparent"/>
+                    <circle id="progress-bar" class="progress-ring__circle" cx="60" cy="60" r="52" stroke="#1a4a5e" stroke-width="8" fill="transparent" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+                </svg>
+                <div id="percent-text" class="percent">0%</div>
+            </div>
+        </section>
+
+        <div id="veredito-container" class="veredito-card">
+            <h4 id="veredito-status">Status</h4>
+            <p id="veredito-mensagem">Resultado da análise.</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="text-column">
+                <button class="btn-action" onclick="acionarInput(1)">Selecionar Arquivo A</button>
+                <input type="file" id="file-input-1" accept=".txt,.pdf,.docx" style="display: none;" onchange="prepararArquivo(this, 1)">
+                <div class="text-box">
+                    <h3>Documento A (Original)</h3>
+                    <div id="output-a" class="text-area">Aguardando...</div>
+                </div>
+            </div>
+
+            <div class="text-column">
+                <button class="btn-action" onclick="acionarInput(2)">Selecionar Arquivo B</button>
+                <input type="file" id="file-input-2" accept=".txt,.pdf,.docx" style="display: none;" onchange="prepararArquivo(this, 2)">
+                <div class="text-box">
+                    <h3>Documento B (Suspeito)</h3>
+                    <div id="output-b" class="text-area">Aguardando...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

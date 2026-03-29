@@ -1,0 +1,82 @@
+/* --- RESET E BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #f4f7f6; font-family: 'Montserrat', sans-serif; color: #333; }
+
+/* --- CABEÇALHO (PADRÃO ORIGINAL 34") --- */
+header { 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px 0; 
+    width: 100%;
+}
+.header-container { 
+    width: 95%; 
+    max-width: 1600px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+header img { max-width: 300px; height: auto; }
+.tagline { font-size: 2rem; font-weight: 700; color: #1a4a5e; }
+
+/* --- CONTROLES E RELÓGIO --- */
+.main-container { display: flex; flex-direction: column; align-items: center; padding: 40px 0; }
+.central-controls { display: flex; flex-direction: column; align-items: center; gap: 25px; margin-bottom: 40px; }
+
+/* Grupo de Botões Centralizado */
+.button-group { display: flex; gap: 15px; justify-content: center; }
+
+.btn-run { 
+    padding: 15px 40px; 
+    background-color: #1a4a5e; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
+.btn-run:hover { background-color: #0d2e3d; }
+.btn-run:disabled { background-color: #a0acb1; cursor: not-allowed; }
+
+.btn-reset { 
+    padding: 15px 30px; 
+    background-color: #6c757d; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
+.btn-reset:hover { background-color: #5a6268; }
+
+.progress-container { position: relative; width: 120px; height: 120px; }
+.progress-ring__circle { transition: stroke-dashoffset 0.1s linear; transform: rotate(-90deg); transform-origin: 50% 50%; }
+.percent { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: 700; font-size: 1.6rem; color: #1a4a5e; }
+
+/* --- CARD DE VEREDITO --- */
+.veredito-card { width: 95%; max-width: 1600px; margin-bottom: 30px; padding: 25px; border-radius: 12px; text-align: center; display: none; }
+.status-baixo { background-color: #d4edda !important; color: #155724 !important; border: 2px solid #c3e6cb !important; }
+.status-medio { background-color: #fff3cd !important; color: #856404 !important; border: 2px solid #ffeeba !important; }
+.status-alto { background-color: #f8d7da !important; color: #721c24 !important; border: 2px solid #f5c6cb !important; }
+
+/* --- GRID DE TEXTO --- */
+.comparison-grid { width: 95%; max-width: 1600px; display: flex; gap: 30px; }
+.text-column { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+.btn-action { align-self: flex-start; padding: 10px 20px; border: 1px solid #1a4a5e; background: white; color: #1a4a5e; cursor: pointer; font-weight: 600; }
+.text-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+.text-area { min-height: 400px; line-height: 1.8; white-space: normal; font-size: 16px; text-align: justify; }
+
+/* Estilo do Grifo */
+mark { 
+    background-color: #fff176 !important; 
+    color: #000 !important; 
+    padding: 2px 0 !important;
+    border-bottom: 2px solid #ffd600 !important;
+}
